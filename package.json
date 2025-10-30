@@ -47,7 +47,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && bun build ./src/index.ts --outdir ./dist --format esm --target node --minify --external '*' && bun build ./src/index.ts --outdir ./dist/cjs --format cjs --target node --minify --external '*'",
-    "types": "tsc --declaration --emitDeclarationOnly --outDir ./dist",
+    "types": "tsc --project tsconfig.build.json",
     "prepublishOnly": "bun run build && bun run types",
     "test": "bun test",
     "example": "bun run examples/basic-usage.ts"

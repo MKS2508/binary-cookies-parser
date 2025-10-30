@@ -60,7 +60,7 @@ export class BinaryCookiesParser {
             this.getCookieOffsets(i);
             this.getCookieData(i);
 
-            for (let j = 0; j < this.pages[i].cookies.length; j++) {
+            for (let j = 0; j < this.pages[i]!.cookies.length; j++) {
                 const cookieData = this.parseCookieData(i, j);
                 this.cookies.push(cookieData);
             }
@@ -156,7 +156,7 @@ export class BinaryCookiesParser {
     }
 
     private getNumCookies(pageIndex: number): number {
-        const page = this.pages[pageIndex];
+        const page = this.pages[pageIndex]!;
         page.bufferPosition = 0;
 
         const pageHeader = page.buffer.readInt32BE(page.bufferPosition);
@@ -173,7 +173,7 @@ export class BinaryCookiesParser {
     }
 
     private getCookieOffsets(pageIndex: number): number[] {
-        const page = this.pages[pageIndex];
+        const page = this.pages[pageIndex]!;
         page.cookieOffsets = [];
 
         for (let i = 0; i < page.numCookies; i++) {
@@ -185,7 +185,7 @@ export class BinaryCookiesParser {
     }
 
     private getCookieData(pageIndex: number): Array<{ buffer: Buffer }> {
-        const page = this.pages[pageIndex];
+        const page = this.pages[pageIndex]!;
         page.cookies = [];
 
         for (const offset of page.cookieOffsets) {
@@ -206,8 +206,8 @@ export class BinaryCookiesParser {
     }
 
     private parseCookieData(pageIndex: number, cookieIndex: number): BinaryCookie {
-        const page = this.pages[pageIndex];
-        const cookie = page.cookies[cookieIndex];
+        const page = this.pages[pageIndex]!;
+        const cookie = page.cookies[cookieIndex]!;
         const buffer = cookie.buffer;
 
         const MAC_EPOCH_OFFSET = 978307200;
