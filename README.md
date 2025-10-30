@@ -1,4 +1,4 @@
-# binary-cookies-parser
+# binary-cookies-parser 🍪
 
 [![npm version](https://img.shields.io/npm/v/@mks2508/binary-cookies-parser.svg)](https://www.npmjs.com/package/@mks2508/binary-cookies-parser)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -9,12 +9,11 @@ A modern, TypeScript-native parser for macOS binary cookies files (`.binarycooki
 
 ## Features
 
-- 🚀 **Zero Dependencies** - Pure TypeScript implementation
-- 📦 **Dual Package** - ESM and CommonJS support
-- 🔒 **Type Safe** - Full TypeScript definitions included
-- ⚡ **Fast** - Built with Bun, works with Node.js
-- 🍎 **macOS Native** - Handles Safari and native app cookies
-- 🎯 **Simple API** - One function to parse cookies
+-  **Zero Dependencies** - Pure TypeScript implementation
+-  **Dual Package** - ESM and CommonJS support
+-  **Fast** - Built with Bun, works with Node.js
+- **macOS Native** - Handles Safari and native app cookies
+-  **Simple API** - One function to parse cookies
 
 ## Installation
 
@@ -30,15 +29,6 @@ yarn add binary-cookies-parser
 
 # pnpm
 pnpm add binary-cookies-parser
-```
-
-## Quick Start
-
-```typescript
-import { parseBinaryCookies } from 'binary-cookies-parser';
-
-const cookies = await parseBinaryCookies('/path/to/Cookies.binarycookies');
-console.log(cookies);
 ```
 
 ## Usage
