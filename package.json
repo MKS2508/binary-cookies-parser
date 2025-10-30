@@ -1,10 +1,9 @@
 {
-  "scripts": {
-    "build": "rm -rf dist && bun build ./src/index.ts --outdir ./dist --format esm --target node --minify --external '*' && bun build ./src/index.ts --outdir ./dist/cjs --format cjs --target node --minify --external '*' && cp ./src/index.ts ./dist/index.d.ts",
-    "types": "tsc --declaration --emitDeclarationOnly --outDir ./dist",
-    "prepublishOnly": "bun run build"
-  },
-  "name": "binary-cookies-parser",
+  "name": "@mks2508/binary-cookies-parser",
+  "version": "1.0.0",
+  "description": "Modern TypeScript parser for macOS binary cookies files (.binarycookies). Parse Safari and app cookies with zero dependencies.",
+  "author": "MKS2508",
+  "license": "MIT",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
@@ -16,5 +15,45 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"]
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "cookies",
+    "binarycookies",
+    "safari",
+    "macos",
+    "parser",
+    "typescript",
+    "playwright",
+    "puppeteer",
+    "automation",
+    "binary",
+    "cookie-parser",
+    "apple"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mks2508/binary-cookies-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mks2508/binary-cookies-parser/issues"
+  },
+  "homepage": "https://github.com/mks2508/binary-cookies-parser#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist && bun build ./src/index.ts --outdir ./dist --format esm --target node --minify --external '*' && bun build ./src/index.ts --outdir ./dist/cjs --format cjs --target node --minify --external '*'",
+    "types": "tsc --declaration --emitDeclarationOnly --outDir ./dist",
+    "prepublishOnly": "bun run build && bun run types",
+    "test": "bun test",
+    "example": "bun run examples/basic-usage.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    // Environment setup & latest features
+    // Environment setup
     "lib": ["ESNext"],
     "target": "ESNext",
     "module": "Preserve",
@@ -8,11 +8,16 @@
     "jsx": "react-jsx",
     "allowJs": true,
 
-    // Bundler mode
+    // Bundler mode for development
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
+
+    // Type generation (for bun run types)
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
 
     // Best practices
     "strict": true,
@@ -21,9 +26,24 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
 
-    // Some stricter flags (disabled by default)
+    // Stricter flags
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    "noPropertyAccessFromIndexSignature": false,
+
+    // Paths
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "examples"
+  ]
 }
