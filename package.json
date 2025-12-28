@@ -1,7 +1,7 @@
 {
   "name": "@mks2508/binary-cookies-parser",
-  "version": "1.0.0",
-  "description": "Modern TypeScript parser for macOS binary cookies files (.binarycookies). Parse Safari and app cookies with zero dependencies.",
+  "version": "2.0.1",
+  "description": "Universal cookie parser supporting Netscape (cookies.txt), JSON, and macOS binary (.binarycookies) formats with auto-detection.",
   "author": "MKS2508",
   "license": "MIT",
   "type": "module",
@@ -22,17 +22,22 @@
   ],
   "keywords": [
     "cookies",
+    "cookie-parser",
+    "netscape",
+    "cookies-txt",
     "binarycookies",
     "safari",
     "macos",
+    "json-cookies",
     "parser",
     "typescript",
     "playwright",
     "puppeteer",
     "automation",
     "binary",
-    "cookie-parser",
-    "apple"
+    "apple",
+    "youtube",
+    "yt-dlp"
   ],
   "repository": {
     "type": "git",
@@ -46,7 +51,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "rm -rf dist && bun build ./src/index.ts --outdir ./dist --format esm --target node --minify --external '*' && bun build ./src/index.ts --outdir ./dist/cjs --format cjs --target node --minify --external '*'",
+    "build": "rm -rf dist && bun build ./src/index.ts --outdir ./dist --format esm --target node --minify && bun build ./src/index.ts --outdir ./dist/cjs --format cjs --target node --minify",
     "types": "tsc --project tsconfig.build.json",
     "prepublishOnly": "bun run build && bun run types",
     "test": "bun test",
@@ -55,5 +60,8 @@
   "devDependencies": {
     "@types/bun": "latest",
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@mks2508/binary-cookies-parser": "2.0.1"
   }
 }
